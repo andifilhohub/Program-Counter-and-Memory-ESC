@@ -1,0 +1,98 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib64/ivl/system.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib64/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib64/ivl/va_math.vpi";
+S_0x55b7e0ef94f0 .scope module, "tb_gdmux4way16" "tb_gdmux4way16" 2 3;
+ .timescale 0 0;
+v0x55b7e0f132a0_0 .var "d", 15 0;
+v0x55b7e0f13380_0 .var "sel", 1 0;
+v0x55b7e0f13420_0 .net "y0", 15 0, L_0x55b7e0f23880;  1 drivers
+v0x55b7e0f134c0_0 .net "y1", 15 0, L_0x55b7e0f23b50;  1 drivers
+v0x55b7e0f13560_0 .net "y2", 15 0, L_0x55b7e0f23e00;  1 drivers
+v0x55b7e0f13600_0 .net "y3", 15 0, L_0x55b7e0f24070;  1 drivers
+S_0x55b7e0ef9680 .scope module, "uut" "gdmux4way16" 2 9, 3 1 0, S_0x55b7e0ef94f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "d";
+    .port_info 1 /INPUT 2 "sel";
+    .port_info 2 /OUTPUT 16 "y0";
+    .port_info 3 /OUTPUT 16 "y1";
+    .port_info 4 /OUTPUT 16 "y2";
+    .port_info 5 /OUTPUT 16 "y3";
+L_0x7f72f25c5018 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0ebe510_0 .net/2u *"_ivl_0", 1 0, L_0x7f72f25c5018;  1 drivers
+v0x55b7e0f12350_0 .net *"_ivl_10", 0 0, L_0x55b7e0f23a60;  1 drivers
+L_0x7f72f25c50f0 .functor BUFT 1, C4<0000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0f12410_0 .net/2u *"_ivl_12", 15 0, L_0x7f72f25c50f0;  1 drivers
+L_0x7f72f25c5138 .functor BUFT 1, C4<10>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0f124d0_0 .net/2u *"_ivl_16", 1 0, L_0x7f72f25c5138;  1 drivers
+v0x55b7e0f125b0_0 .net *"_ivl_18", 0 0, L_0x55b7e0f23d60;  1 drivers
+v0x55b7e0f126c0_0 .net *"_ivl_2", 0 0, L_0x55b7e0f13700;  1 drivers
+L_0x7f72f25c5180 .functor BUFT 1, C4<0000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0f12780_0 .net/2u *"_ivl_20", 15 0, L_0x7f72f25c5180;  1 drivers
+L_0x7f72f25c51c8 .functor BUFT 1, C4<11>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0f12860_0 .net/2u *"_ivl_24", 1 0, L_0x7f72f25c51c8;  1 drivers
+v0x55b7e0f12940_0 .net *"_ivl_26", 0 0, L_0x55b7e0f23fd0;  1 drivers
+L_0x7f72f25c5210 .functor BUFT 1, C4<0000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0f12a00_0 .net/2u *"_ivl_28", 15 0, L_0x7f72f25c5210;  1 drivers
+L_0x7f72f25c5060 .functor BUFT 1, C4<0000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0f12ae0_0 .net/2u *"_ivl_4", 15 0, L_0x7f72f25c5060;  1 drivers
+L_0x7f72f25c50a8 .functor BUFT 1, C4<01>, C4<0>, C4<0>, C4<0>;
+v0x55b7e0f12bc0_0 .net/2u *"_ivl_8", 1 0, L_0x7f72f25c50a8;  1 drivers
+v0x55b7e0f12ca0_0 .net "d", 15 0, v0x55b7e0f132a0_0;  1 drivers
+v0x55b7e0f12d80_0 .net "sel", 1 0, v0x55b7e0f13380_0;  1 drivers
+v0x55b7e0f12e60_0 .net "y0", 15 0, L_0x55b7e0f23880;  alias, 1 drivers
+v0x55b7e0f12f40_0 .net "y1", 15 0, L_0x55b7e0f23b50;  alias, 1 drivers
+v0x55b7e0f13020_0 .net "y2", 15 0, L_0x55b7e0f23e00;  alias, 1 drivers
+v0x55b7e0f13100_0 .net "y3", 15 0, L_0x55b7e0f24070;  alias, 1 drivers
+L_0x55b7e0f13700 .cmp/eq 2, v0x55b7e0f13380_0, L_0x7f72f25c5018;
+L_0x55b7e0f23880 .functor MUXZ 16, L_0x7f72f25c5060, v0x55b7e0f132a0_0, L_0x55b7e0f13700, C4<>;
+L_0x55b7e0f23a60 .cmp/eq 2, v0x55b7e0f13380_0, L_0x7f72f25c50a8;
+L_0x55b7e0f23b50 .functor MUXZ 16, L_0x7f72f25c50f0, v0x55b7e0f132a0_0, L_0x55b7e0f23a60, C4<>;
+L_0x55b7e0f23d60 .cmp/eq 2, v0x55b7e0f13380_0, L_0x7f72f25c5138;
+L_0x55b7e0f23e00 .functor MUXZ 16, L_0x7f72f25c5180, v0x55b7e0f132a0_0, L_0x55b7e0f23d60, C4<>;
+L_0x55b7e0f23fd0 .cmp/eq 2, v0x55b7e0f13380_0, L_0x7f72f25c51c8;
+L_0x55b7e0f24070 .functor MUXZ 16, L_0x7f72f25c5210, v0x55b7e0f132a0_0, L_0x55b7e0f23fd0, C4<>;
+    .scope S_0x55b7e0ef94f0;
+T_0 ;
+    %vpi_call 2 19 "$display", "Gdmux4way16 Testbench" {0 0 0};
+    %vpi_call 2 20 "$dumpfile", "signals.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55b7e0ef94f0 {0 0 0};
+    %pushi/vec4 42405, 0, 16;
+    %store/vec4 v0x55b7e0f132a0_0, 0, 16;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x55b7e0f13380_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 23130, 0, 16;
+    %store/vec4 v0x55b7e0f132a0_0, 0, 16;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x55b7e0f13380_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 65535, 0, 16;
+    %store/vec4 v0x55b7e0f132a0_0, 0, 16;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x55b7e0f13380_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v0x55b7e0f132a0_0, 0, 16;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x55b7e0f13380_0, 0, 2;
+    %delay 10, 0;
+    %vpi_call 2 28 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x55b7e0ef94f0;
+T_1 ;
+    %vpi_call 2 32 "$monitor", "Time: %0t | Sel: %b | D: %h | Y0: %h | Y1: %h | Y2: %h | Y3: %h", $time, v0x55b7e0f13380_0, v0x55b7e0f132a0_0, v0x55b7e0f13420_0, v0x55b7e0f134c0_0, v0x55b7e0f13560_0, v0x55b7e0f13600_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_gdmux4way16.v";
+    "./gdmux4way16.v";

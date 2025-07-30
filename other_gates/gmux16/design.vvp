@@ -1,0 +1,64 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib64/ivl/system.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib64/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib64/ivl/va_math.vpi";
+S_0x563a2d587b90 .scope module, "tb_gmux16" "tb_gmux16" 2 3;
+ .timescale 0 0;
+v0x563a2d59b980_0 .var "a", 15 0;
+v0x563a2d59ba60_0 .var "b", 15 0;
+v0x563a2d59bb00_0 .var "sel", 0 0;
+v0x563a2d59bc00_0 .net "y", 15 0, L_0x563a2d59bcd0;  1 drivers
+S_0x563a2d587d20 .scope module, "uut" "gmux16" 2 8, 3 3 0, S_0x563a2d587b90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "a";
+    .port_info 1 /INPUT 16 "b";
+    .port_info 2 /INPUT 1 "sel";
+    .port_info 3 /OUTPUT 16 "y";
+v0x563a2d54e470_0 .net "a", 15 0, v0x563a2d59b980_0;  1 drivers
+v0x563a2d59b6a0_0 .net "b", 15 0, v0x563a2d59ba60_0;  1 drivers
+v0x563a2d59b780_0 .net "sel", 0 0, v0x563a2d59bb00_0;  1 drivers
+v0x563a2d59b820_0 .net "y", 15 0, L_0x563a2d59bcd0;  alias, 1 drivers
+L_0x563a2d59bcd0 .functor MUXZ 16, v0x563a2d59b980_0, v0x563a2d59ba60_0, v0x563a2d59bb00_0, C4<>;
+    .scope S_0x563a2d587b90;
+T_0 ;
+    %vpi_call 2 11 "$display", "Testbench para gate MUX 16 bits combinacional" {0 0 0};
+    %vpi_call 2 12 "$dumpfile", "signals.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x563a2d587b90 {0 0 0};
+    %delay 0, 0;
+    %vpi_func 2 15 "$random" 32 {0 0 0};
+    %pad/s 16;
+    %store/vec4 v0x563a2d59b980_0, 0, 16;
+    %vpi_func 2 15 "$random" 32 {0 0 0};
+    %pad/s 16;
+    %store/vec4 v0x563a2d59ba60_0, 0, 16;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563a2d59bb00_0, 0, 1;
+    %delay 10, 0;
+    %vpi_func 2 16 "$random" 32 {0 0 0};
+    %pad/s 16;
+    %store/vec4 v0x563a2d59b980_0, 0, 16;
+    %vpi_func 2 16 "$random" 32 {0 0 0};
+    %pad/s 16;
+    %store/vec4 v0x563a2d59ba60_0, 0, 16;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x563a2d59bb00_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x563a2d587b90;
+T_1 ;
+    %vpi_call 2 22 "$monitor", "t=%03d: \011a=%d,b=%d,sel=%d,y=%d \012", $time, v0x563a2d59b980_0, v0x563a2d59ba60_0, v0x563a2d59bb00_0, v0x563a2d59bc00_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_gmux16.v";
+    "./gmux16.v";

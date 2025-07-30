@@ -1,0 +1,70 @@
+$date
+	Thu Mar 20 18:14:13 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_gdmux4way16 $end
+$var wire 16 ! y3 [15:0] $end
+$var wire 16 " y2 [15:0] $end
+$var wire 16 # y1 [15:0] $end
+$var wire 16 $ y0 [15:0] $end
+$var reg 16 % d [15:0] $end
+$var reg 2 & sel [1:0] $end
+$scope module uut $end
+$var wire 16 ' d [15:0] $end
+$var wire 2 ( sel [1:0] $end
+$var wire 16 ) y3 [15:0] $end
+$var wire 16 * y2 [15:0] $end
+$var wire 16 + y1 [15:0] $end
+$var wire 16 , y0 [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1010010110100101 ,
+b0 +
+b0 *
+b0 )
+b0 (
+b1010010110100101 '
+b0 &
+b1010010110100101 %
+b1010010110100101 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b101101001011010 #
+b101101001011010 +
+b0 $
+b0 ,
+b1 &
+b1 (
+b101101001011010 %
+b101101001011010 '
+#20
+b1111111111111111 "
+b1111111111111111 *
+b0 #
+b0 +
+b10 &
+b10 (
+b1111111111111111 %
+b1111111111111111 '
+#30
+b0 "
+b0 *
+b11 &
+b11 (
+b0 %
+b0 '
+#40
